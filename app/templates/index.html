@@ -6,23 +6,28 @@
 
       <div class="form-group">
         <label for="exampleInputLender">Lender</label>
-        <input type="text" class="form-control" id="exampleInputLender" placeholder="Lender" name="lender"
-               value="{{ request.form.get('lender', ' ') }}">
+        <input type="text" class="form-control" id="exampleInputLender" placeholder="Lender" name='lender'>
       </div>
 
       <div class="form-group">
         <label for="exampleInputAmount">Amount</label>
-        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount" value="{{
-        request.form.get('amount', ' ') }}">
+        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount" name='amount'>
       </div>
 
       <div class="form-group">
         <label for="exampleInputBorrower">Borrower</label>
-        <input type="text" class="form-control" id="exampleInputBorrower" placeholder="Borrower" value="
-        {{ request.form.get('{{ request.form.get('borrower', ' ') }}">
+        <input type="text" class="form-control" id="exampleInputBorrower" placeholder="Borrower" name='borrower'>
       </div>
 
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
+{% endblock %}
+
+{% block checking %}
+  {% for res in results %}
+    <div class="result">
+      block {{ res['block'] }} : {{ res['result'] }}
+    </div>
+  {% endfor %}
 {% endblock %}
